@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>独立播放的视频播放器</title>
+<style>
+  .video-container {
+    width: 80%;
+    margin: 20px auto;
+    padding: 10px;
+    border: 1px solid #ddd; /* 添加边框以区分不同的视频 */
+  }
+  .video-container video {
+    width: 100%;
+    height: auto;
+    background: #000;
+  }
+  .video-container .controls {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .video-container button {
+    padding: 5px 10px;
+    margin: 0 5px;
+    cursor: pointer;
+  }
+  .video-title {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  /* 简单的全屏样式 */
+  :fullscreen .video-container video {
+    width: 100%;
+    height: 100%;
+  }
+</style>
+</head>
+<body>
+
+<div class="video-container">
+  <div class="video-title">
+    <h2>秃崽被后入 娇喘声直入盖天灵 让几把蠢蠢欲动🥵</h2>
+  </div>
+  <video controls>
+    <source src="13.mp4" type="video/mp4">
+    您的浏览器不支持视频播放。
+  </video>
+  <div class="controls">
+    <button onclick="playPauseVideo('video1')">播放/暂停</button>
+    <button onclick="toggleFullScreen('video1')">全屏</button>
+  </div>
+</div>
+
+<div class="video-container">
+  <div class="video-title">
+    <h2>青春期的学习_第1话_有趣的年纪_[中文字幕]</h2>
+  </div>
+  <video controls>
+    <source src="1.mp4" type="video/mp4">
+    您的浏览器不支持视频播放。
+  </video>
+  <div class="controls">
+    <button onclick="playPauseVideo('video2')">播放/暂停</button>
+    <button onclick="toggleFullScreen('video2')">全屏</button>
+  </div>
+</div>
+
+<!-- 更多视频容器可以按照上面的格式继续添加 -->
+
+<script>
+  // 播放/暂停视频
+  function playPauseVideo(videoId) {
+    var video = document.getElementById(videoId);
+    if (video.paused) {
+      video.play();
+    } else {
+      video.pause();
+    }
+  }
+  
+  // 切换全屏
+  function toggleFullScreen(videoId) {
+    var video = document.getElementById(videoId);
+    if (!document.fullscreenElement) {
+      video.requestFullscreen();
+    } else {
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+      }
+    }
+  }
+</script>
+
+</body>
+</html>
